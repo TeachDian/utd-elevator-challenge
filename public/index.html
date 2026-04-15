@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elevator Challenge</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Elevator Challenge</p>
+          <h1>Levels 1 to 9 in one runnable app</h1>
+          <p class="lede">
+            The core logic is shared across tests, the browser UI, and the API layer so the challenge stays modular.
+          </p>
+        </div>
+        <div class="hero-rail">
+          <div class="controls-card">
+            <div class="controls-section-title">Add Request</div>
+            <form id="request-form" class="request-form">
+              <label>
+                <span>Name</span>
+                <input id="name" name="name" type="text" placeholder="Jamie" required />
+              </label>
+              <label>
+                <span>Current Floor</span>
+                <input id="current-floor" name="currentFloor" type="number" min="0" value="0" required />
+              </label>
+              <label>
+                <span>Dropoff Floor</span>
+                <input id="dropoff-floor" name="dropOffFloor" type="number" min="0" value="1" required />
+              </label>
+              <button type="submit">Add Request</button>
+            </form>
+          </div>
+
+          <div class="controls-card controls-card-secondary">
+            <div class="controls-section-title">Run Simulation</div>
+            <div class="toolbar toolbar-inline">
+              <label>
+                <span>Strategy</span>
+                <select id="strategy"></select>
+              </label>
+              <label>
+                <span>Hour</span>
+                <input id="hour" type="number" min="0" max="23" value="9" />
+              </label>
+              <div class="toolbar-actions">
+                <button id="dispatch">Dispatch</button>
+                <button id="demo" class="secondary">Load Demo</button>
+                <button id="reset" class="secondary">Reset</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard">
+        <div class="left-rail">
+          <article class="panel metrics">
+            <h2>State</h2>
+            <div class="metric-grid">
+              <div>
+                <span>Current Floor</span>
+                <strong id="metric-floor">0</strong>
+              </div>
+              <div>
+                <span>Stops</span>
+                <strong id="metric-stops">0</strong>
+              </div>
+              <div>
+                <span>Floors Traversed</span>
+                <strong id="metric-traversed">0</strong>
+              </div>
+              <div>
+                <span>Completed Rides</span>
+                <strong id="metric-completed">0</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel lists">
+            <h2>Queues</h2>
+            <div class="list-grid">
+              <section>
+                <h3>Requests</h3>
+                <ul id="requests-list" class="pill-list"></ul>
+              </section>
+              <section>
+                <h3>Riders</h3>
+                <ul id="riders-list" class="pill-list"></ul>
+              </section>
+              <section>
+                <h3>Completed</h3>
+                <ul id="completed-list" class="pill-list"></ul>
+              </section>
+            </div>
+          </article>
+        </div>
+
+        <article class="panel building-panel">
+          <div class="panel-header">
+            <h2>Building View</h2>
+            <p id="building-caption">Waiting for requests.</p>
+          </div>
+          <div id="building" class="building"></div>
+        </article>
+
+        <article class="panel events">
+          <h2>Event Log</h2>
+          <div class="events-scroll">
+            <ol id="events-list" class="events-list"></ol>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

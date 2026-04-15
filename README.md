@@ -17,6 +17,16 @@ When you start a new level, read through the level's specification and write fai
 
 Clone this repository and run `npm install` to install testing dependencies.
 
+## Running The Challenge
+
+- Run `npm test` to execute the automated test suite.
+- Run `npm start` to launch the browser app and API at `http://localhost:3000`.
+- The shared elevator logic lives under `src/domain/`.
+- The API layer lives under `src/server/` and `server/`.
+- The browser UI lives under `public/`.
+- Read [docs/SECURITY_AND_TOOLING.md](docs/SECURITY_AND_TOOLING.md) for the dependency modernization notes.
+- Read [docs/LEVELS.md](docs/LEVELS.md) for how to judge completion from Level 0 through Level 9.
+
 ### Level 0
 
 Sketch out the elevator process on pencil and paper. What kinds of things do you need to keep track of? What is a modern elevator's pickup and drop off strategy?
